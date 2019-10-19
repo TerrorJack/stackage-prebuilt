@@ -111,10 +111,7 @@ ACCEPT_EULA=Y apt install -y msodbcsql17
 mkdir -p /root/.local/bin
 curl -L https://get.haskellstack.org/stable/linux-x86_64.tar.gz | tar xz --wildcards --strip-components=1 -C /root/.local/bin '*/stack'
 
-stack --resolver lts-14.9 build --keep-going --haddock \
-  replace-megaparsec \
-  replace-attoparsec \
-  servant-rawm \
+stack --resolver lts-14.10 build --keep-going --haddock \
   cabal-rpm \
   chiphunk \
   ALUT \
