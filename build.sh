@@ -90,7 +90,7 @@ apt install -y \
   libxss-dev \
   libzip-dev \
   libzmq3-dev \
-  llvm-dev \
+  llvm-8-dev \
   locales-all \
   nettle-dev \
   openssh-client \
@@ -98,20 +98,15 @@ apt install -y \
   protobuf-compiler \
   r-base \
   ruby-dev \
-  unixodbc-dev \
   xz-utils \
   zlib1g-dev
 
-curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
-curl https://packages.microsoft.com/config/ubuntu/19.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
-apt update
-apt full-upgrade -y
-ACCEPT_EULA=Y apt install -y msodbcsql17
-
 mkdir -p /root/.local/bin
 curl -L https://get.haskellstack.org/stable/linux-x86_64.tar.gz | tar xz --wildcards --strip-components=1 -C /root/.local/bin '*/stack'
+mkdir /root/.stack
+mv /tmp/config.yaml /root/.stack/
 
-stack --resolver lts-14.10 build --keep-going --haddock \
+stack --resolver lts-14.11 build --keep-going --haddock \
   cabal-rpm \
   chiphunk \
   ALUT \
@@ -550,7 +545,6 @@ stack --resolver lts-14.10 build --keep-going --haddock \
   convertible \
   cookie \
   core-data \
-  core-program \
   core-text \
   countable \
   country \
@@ -711,6 +705,7 @@ stack --resolver lts-14.10 build --keep-going --haddock \
   download \
   drinkery \
   dsp \
+  dual \
   dual-tree \
   dublincore-xml-conduit \
   dunai \
@@ -1869,6 +1864,8 @@ stack --resolver lts-14.10 build --keep-going --haddock \
   repa \
   repa-algorithms \
   repa-io \
+  replace-attoparsec \
+  replace-megaparsec \
   repline \
   req \
   req-conduit \
@@ -1979,6 +1976,7 @@ stack --resolver lts-14.10 build --keep-going --haddock \
   servant-mock \
   servant-multipart \
   servant-pipes \
+  servant-rawm \
   servant-ruby \
   servant-server \
   servant-static-th \
@@ -2556,6 +2554,8 @@ stack --resolver lts-14.10 build --keep-going --haddock \
   zstd \
   ztail \
   || true
+stack build --haddock \
+  hscolour
 
 apt autoremove --purge -y
 apt clean

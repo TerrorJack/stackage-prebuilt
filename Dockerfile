@@ -1,4 +1,4 @@
-FROM ubuntu:disco
+FROM ubuntu:eoan
 
 ENV \
   DEBIAN_FRONTEND=noninteractive \
@@ -10,5 +10,6 @@ ENV \
 WORKDIR /root
 
 COPY build.sh /tmp/build.sh
+COPY config.yaml /tmp/config.yaml
 
 RUN /tmp/build.sh
