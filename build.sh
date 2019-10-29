@@ -106,9 +106,96 @@ curl -L https://get.haskellstack.org/stable/linux-x86_64.tar.gz | tar xz --wildc
 mkdir /root/.stack
 mv /tmp/config.yaml /root/.stack/
 
-stack --resolver lts-14.11 build --keep-going --haddock \
-  cabal-rpm \
-  chiphunk \
+stack --resolver lts-14.12 build --keep-going --haddock \
+  amazonka \
+  amazonka-apigateway \
+  amazonka-application-autoscaling \
+  amazonka-appstream \
+  amazonka-athena \
+  amazonka-autoscaling \
+  amazonka-budgets \
+  amazonka-certificatemanager \
+  amazonka-cloudformation \
+  amazonka-cloudfront \
+  amazonka-cloudhsm \
+  amazonka-cloudsearch \
+  amazonka-cloudsearch-domains \
+  amazonka-cloudtrail \
+  amazonka-cloudwatch \
+  amazonka-cloudwatch-events \
+  amazonka-cloudwatch-logs \
+  amazonka-codebuild \
+  amazonka-codecommit \
+  amazonka-codedeploy \
+  amazonka-codepipeline \
+  amazonka-cognito-identity \
+  amazonka-cognito-idp \
+  amazonka-cognito-sync \
+  amazonka-config \
+  amazonka-core \
+  amazonka-datapipeline \
+  amazonka-devicefarm \
+  amazonka-discovery \
+  amazonka-dms \
+  amazonka-ds \
+  amazonka-dynamodb \
+  amazonka-dynamodb-streams \
+  amazonka-ecr \
+  amazonka-ecs \
+  amazonka-efs \
+  amazonka-elasticache \
+  amazonka-elasticbeanstalk \
+  amazonka-elasticsearch \
+  amazonka-elastictranscoder \
+  amazonka-elb \
+  amazonka-elbv2 \
+  amazonka-emr \
+  amazonka-gamelift \
+  amazonka-glacier \
+  amazonka-glue \
+  amazonka-health \
+  amazonka-iam \
+  amazonka-importexport \
+  amazonka-inspector \
+  amazonka-iot \
+  amazonka-iot-dataplane \
+  amazonka-kinesis \
+  amazonka-kinesis-analytics \
+  amazonka-kinesis-firehose \
+  amazonka-kms \
+  amazonka-lambda \
+  amazonka-lightsail \
+  amazonka-marketplace-analytics \
+  amazonka-marketplace-metering \
+  amazonka-ml \
+  amazonka-opsworks \
+  amazonka-opsworks-cm \
+  amazonka-pinpoint \
+  amazonka-polly \
+  amazonka-rds \
+  amazonka-redshift \
+  amazonka-rekognition \
+  amazonka-route53 \
+  amazonka-route53-domains \
+  amazonka-s3 \
+  amazonka-sdb \
+  amazonka-servicecatalog \
+  amazonka-ses \
+  amazonka-shield \
+  amazonka-sms \
+  amazonka-snowball \
+  amazonka-sns \
+  amazonka-sqs \
+  amazonka-ssm \
+  amazonka-stepfunctions \
+  amazonka-storagegateway \
+  amazonka-sts \
+  amazonka-support \
+  amazonka-swf \
+  amazonka-test \
+  amazonka-waf \
+  amazonka-workspaces \
+  amazonka-xray \
   ALUT \
   ANum \
   Allure \
@@ -417,6 +504,7 @@ stack --resolver lts-14.11 build --keep-going --haddock \
   cabal-doctest \
   cabal-file-th \
   cabal-install \
+  cabal-rpm \
   cabal2nix \
   cabal2spec \
   cache \
@@ -456,6 +544,7 @@ stack --resolver lts-14.11 build --keep-going --haddock \
   checkers \
   checksum \
   chimera \
+  chiphunk \
   choice \
   chronologique \
   chronos \
@@ -1131,6 +1220,7 @@ stack --resolver lts-14.11 build --keep-going --haddock \
   htoml \
   http-api-data \
   http-client \
+  http-client-openssl \
   http-client-tls \
   http-common \
   http-conduit \
@@ -1205,6 +1295,7 @@ stack --resolver lts-14.11 build --keep-going --haddock \
   indentation-parsec \
   indents \
   indexed \
+  indexed-profunctors \
   indexed-list-literals \
   infer-license \
   inflections \
@@ -1559,6 +1650,7 @@ stack --resolver lts-14.11 build --keep-going --haddock \
   nonce \
   nondeterminism \
   nonempty-containers \
+  nonempty-vector \
   nonemptymap \
   not-gloss \
   nowdoc \
@@ -1594,6 +1686,8 @@ stack --resolver lts-14.11 build --keep-going --haddock \
   openssl-streams \
   operational \
   operational-class \
+  optics-core \
+  optics-extra \
   optional-args \
   options \
   optparse-applicative \
@@ -1781,6 +1875,7 @@ stack --resolver lts-14.11 build --keep-going --haddock \
   purescript-bridge \
   pushbullet-types \
   pusher-http-haskell \
+  PyF \
   qchas \
   qm-interpolated-string \
   qnap-decrypt \
