@@ -106,12 +106,11 @@ curl -L https://get.haskellstack.org/stable/linux-x86_64.tar.gz | tar xz --wildc
 mkdir /root/.stack
 mv /tmp/config.yaml /root/.stack/
 
-stack --resolver lts-14.13 build --keep-going --haddock \
+stack --resolver lts-14.14 build --keep-going --haddock \
   nonempty-vector \
-  indexed-profunctors \
   optics-core \
   optics-extra \
-  morpheus-graphql \
+  indexed-profunctors \
   ALUT \
   ANum \
   Allure \
@@ -2565,6 +2564,7 @@ stack build --haddock \
 apt autoremove --purge -y
 apt clean
 rm -rf \
+  /root/.stack/pantry \
   /root/.stack/programs/x86_64-linux/*.tar.* \
   /tmp/* \
   /var/lib/apt/lists/* \
