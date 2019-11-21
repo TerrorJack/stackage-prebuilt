@@ -106,11 +106,7 @@ curl -L https://get.haskellstack.org/stable/linux-x86_64.tar.gz | tar xz --wildc
 mkdir /root/.stack
 mv /tmp/config.yaml /root/.stack/
 
-stack --resolver lts-14.14 build --keep-going --haddock \
-  nonempty-vector \
-  optics-core \
-  optics-extra \
-  indexed-profunctors \
+stack --resolver lts-14.15 build --keep-going --haddock \
   ALUT \
   ANum \
   Allure \
@@ -847,7 +843,6 @@ stack --resolver lts-14.14 build --keep-going --haddock \
   force-layout \
   foreign-store \
   forkable-monad \
-  forma \
   format-numbers \
   formatting \
   foundation \
@@ -1563,6 +1558,7 @@ stack --resolver lts-14.14 build --keep-going --haddock \
   nonce \
   nondeterminism \
   nonempty-containers \
+  nonempty-vector \
   nonemptymap \
   not-gloss \
   nowdoc \
@@ -1600,6 +1596,7 @@ stack --resolver lts-14.14 build --keep-going --haddock \
   operational-class \
   optional-args \
   options \
+  optics-core \
   optparse-applicative \
   optparse-enum \
   optparse-generic \
@@ -2557,7 +2554,9 @@ stack --resolver lts-14.14 build --keep-going --haddock \
   zot \
   zstd \
   ztail \
-  || true
+  indexed-profunctors \
+  optics-extra \
+  PyF || true
 stack build --haddock \
   hscolour
 
@@ -2565,7 +2564,7 @@ apt autoremove --purge -y
 apt clean
 rm -rf \
   /root/.stack/pantry \
-  /root/.stack/programs/x86_64-linux/*.tar.* \
+  /root/.stack/programs \
   /tmp/* \
   /var/lib/apt/lists/* \
   /var/tmp/*

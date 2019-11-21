@@ -1,3 +1,2 @@
 build:
-  keep-going: true
   prefetch: true
