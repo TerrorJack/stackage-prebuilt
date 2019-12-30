@@ -102,9 +102,11 @@ RUN \
     protobuf-compiler \
     r-base \
     ruby-dev \
+    sudo \
     xz-utils \
     zlib1g-dev && \
-  useradd --create-home --shell /bin/bash stackage
+  useradd --create-home --shell /bin/bash stackage && \
+  echo "stackage ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 USER stackage
 
@@ -2567,17 +2569,13 @@ RUN \
   stack build --haddock \
     hscolour
 
-USER root
-
 RUN \
-  apt purge -y \
+  sudo apt purge -y \
     mawk && \
-  apt autoremove --purge -y && \
-  apt clean && \
-  rm -rf \
+  sudo apt autoremove --purge -y && \
+  sudo apt clean && \
+  sudo rm -rf \
     /home/stackage/.stack/programs/x86_64-linux/*.tar.* \
     /tmp/* \
     /var/lib/apt/lists/* \
     /var/tmp/*
-
-USER stackage

@@ -56,9 +56,11 @@ RUN \
     sed \
     shadow \
     sox-dev \
+    sudo \
     webkit2gtk-dev \
     xz && \
-  useradd --create-home --shell /bin/bash stackage
+  useradd --create-home --shell /bin/bash stackage && \
+  echo "stackage ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 USER stackage
 
@@ -2521,12 +2523,8 @@ RUN \
   stack build --haddock \
     hscolour
 
-USER root
-
 RUN \
-  rm -rf \
+  sudo rm -rf \
     /home/stackage/.stack/programs/x86_64-linux/*.tar.* \
     /tmp/* \
     /var/tmp/*
-
-USER stackage
