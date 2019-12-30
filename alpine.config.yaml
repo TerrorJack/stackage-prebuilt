@@ -1,0 +1,3 @@
+ghc-build: musl
+build:
+  prefetch: true
