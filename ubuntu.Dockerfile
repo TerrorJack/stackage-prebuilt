@@ -120,7 +120,7 @@ RUN \
 COPY --chown=stackage:stackage config.yaml /home/stackage/.stack/config.yaml
 
 RUN \
-  stack --resolver lts-14.19 build --haddock \
+  stack --resolver lts-14.20 build --haddock \
     hscolour && \
   (stack build -j${jobs} --keep-going --haddock \
     ALUT \
